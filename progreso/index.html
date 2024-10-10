@@ -12,16 +12,16 @@
             overflow: hidden; /* Asegura que no se salga el contenido */
         }
 
-        .progress-bar {
+       .progress-bar {
             width: 0%;
-            height: 30px;
-            background-color: #4caf50; /* Color de fondo de la barra */
+            height: 30px; /* Altura de la barra de progreso */
             text-align: center;
             line-height: 30px;
             color: white;
             border-radius: 10px;
             background-image: url('https://cdn.dribbble.com/users/1056629/screenshots/2943285/media/f4a4ad649a2a7087a9e449ba7f98a6b4.gif'); /* Imagen de fondo */
-            background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+            background-size: 100% 100%; /* Ajusta el tamaño de la imagen al contenedor */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
             transition: width 0.5s; /* Suaviza la transición del ancho de la barra */
         }
     </style>
