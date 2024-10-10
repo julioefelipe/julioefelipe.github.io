@@ -50,7 +50,7 @@
 
             // Actualiza progress.json usando la API de GitHub
             try {
-                const response = await fetch('https://api.github.com/repos/julioefelipe/julioefelipe.github.io/contents/progreso/progress.json', {
+                const response = await fetch('https://api.github.com/repos/julioefelipe/julioefelipe.github.io/contents/progress.json', {
                     method: 'PUT',
                     headers: {
                         'Authorization': `token ${githubToken}`,
@@ -76,7 +76,7 @@
 
         // Obtener el SHA del archivo actual para la actualización
         async function getCurrentSha() {
-            const response = await fetch('https://api.github.com/repos/julioefelipe/julioefelipe.github.io/contents/progreso/progress.json');
+            const response = await fetch('https://api.github.com/repos/julioefelipe/julioefelipe.github.io/contents/progress.json');
             const data = await response.json();
             return data.sha;
         }
