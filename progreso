@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta de Stream</title>
+    <style>
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meta de Stream: 500</h1>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+
+    <script>
+        // Función para actualizar la barra de progreso
+        function updateProgressBar(current, goal) {
+            const progressBar = document.getElementById('progressBar');
+            const percentage = (current / goal) * 100;
+            progressBar.style.width = percentage + '%';
+            progressBar.innerHTML = current + ' / ' + goal;
+        }
+
+        // Simula la carga desde un archivo JSON en GitHub
+        fetch('progress.json')
+            .then(response => response.json())
+            .then(data => {
+                const current = data.current;
+                const goal = data.goal;
+                updateProgressBar(current, goal);
+            });
+    </script>
+</body>
+</html>
